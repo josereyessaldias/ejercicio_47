@@ -1,0 +1,61 @@
+
+
+
+<div style="text-align: center;">
+
+	<h1>Creador de Color</h1>
+	<br>
+	<input type="text" value="0" class="dial" id="rojo" data-fgColor="red">
+
+	<input type="text" value="0" class="dial" id="verde" data-fgColor="green">
+
+	<input type="text" value="0" class="dial" id="azul" data-fgColor="blue">
+	<br>
+	<h3 id="resultado" style="text-align: center"></h3><br>
+	<div id="cuadro" style="height: 300px;width:70%;margin:auto;"></div>
+
+</div>
+<script>
+
+	var re = 0;
+    var gr = 0;
+    var bl = 0;
+
+
+	 $("#rojo").knob({
+	 	'min':0,
+    	'max':255,
+        'release' : function (v) {
+        	re = Math.round(v);
+        	var final = `rgb(${re},${gr},${bl})`
+        	$("#resultado").text(final)
+        	$("#cuadro").css("background-color", final)
+        }
+    });
+
+	 $("#verde").knob({
+	 	'min':0,
+    	'max':255,
+        'release' : function (v) {
+        	gr = Math.round(v);
+        	var final = `rgb(${re},${gr},${bl})`
+        	$("#resultado").text(final)
+        	$("#cuadro").css("background-color", final)
+        }
+    });
+
+	 $("#azul").knob({
+	 	'min':0,
+    	'max':255,
+        'release' : function (v) {
+        	bl = Math.round(v);
+        	var final = `rgb(${re},${gr},${bl})`
+        	$("#resultado").text(final)
+        	$("#cuadro").css("background-color", final)
+        }
+    });
+
+	 
+
+	 
+</script>
